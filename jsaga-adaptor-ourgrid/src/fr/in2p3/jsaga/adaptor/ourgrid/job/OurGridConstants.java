@@ -8,7 +8,11 @@ package fr.in2p3.jsaga.adaptor.ourgrid.job;
  * Author: Patricia Alanis (patriciaam@lsd.ufcg.edu.br)
  * Date:   Agost 2012
  * ***************************************************/
-
+/**
+ * This class contains the constants used in the code of the JSAGA Adaptors
+ * @author patriciaam
+ *
+ */
 public class OurGridConstants {
 
 	public static final String AUTHORIZATION = "Authorization";

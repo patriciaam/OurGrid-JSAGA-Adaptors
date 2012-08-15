@@ -23,6 +23,7 @@ import fr.in2p3.jsaga.adaptor.security.SecurityCredential;
  * Date:   August 2012
  * ***************************************************/
 
+
 public class OurGridSecurityAdaptor implements SecurityAdaptor {
 
 	private final String USER_ID = "UserID";

@@ -25,12 +25,23 @@ import fr.in2p3.jsaga.adaptor.security.SecurityCredential;
  * Author: Patricia Alanis (patriciaam@lsd.ufcg.edu.br)
  * Date:   August 2012
  * ***************************************************/
-
+/**
+ * 
+ * @author patriciaam
+ *
+ */
 public abstract class OurGridAbstract implements ClientAdaptor {
 
 	protected String m_account;
 	protected String m_passPhrase;
 
+	/**
+	 *  Gets the defaults values for (some of the) attributes supported by this adaptor. 
+	 *  These values can be static or dynamically created from the information available on local host
+	 *  (environment variables, files, ...) and from the attributes map.
+	 *  @param attributes the attributes set by the user
+	 *  @return Returns an array of default values
+	 */
 	public Default[] getDefaults(Map attributes)throws IncorrectStateException {
 
 		return null;
@@ -44,26 +55,43 @@ public abstract class OurGridAbstract implements ClientAdaptor {
 		return OurGridConstants.TYPE_ADAPTOR;
 	}
 
+	/**
+	 * 
+	 * @return userID used to login to the server
+	 */
 	public String getM_account() {
 		return m_account;
 	}
 
+	/**
+	 * Sets the userId used to login to the server
+	 * @param m_account userID
+	 */
 	public void setM_account(String m_account) {
 		this.m_account = m_account;
 	}
 
+	/**
+	 * 
+	 * @return password used to login to the server
+	 */
 	public String getM_passPhrase() {
 		return m_passPhrase;
 	}
 
+	/**
+	 * Sets the password used to login to the server
+	 * @param m_passPhrase password
+	 */
 	public void setM_passPhrase(String m_passPhrase) {
 		this.m_passPhrase = m_passPhrase;
 	}
 
 	/**
-	 * Get a data structure that describes how to use this adaptor. This data
+	 * Gets a data structure that describes how to use this adaptor. This data
 	 * structure contains attribute names with usage constraints (and/or,
 	 * required/optional, hidden...)
+	 * @return Returns the usage data structure
 	 * */
 	public Usage getUsage() {
 
@@ -71,7 +99,7 @@ public abstract class OurGridAbstract implements ClientAdaptor {
 	}
 
 	/**
-	 * This method connect to the server and initialize the connection with the
+	 * Connects to the server and initialize the connection with the
 	 * provided attributes
 	 * 
 	 * @param userInfo the user login
@@ -102,11 +130,18 @@ public abstract class OurGridAbstract implements ClientAdaptor {
 
 	}
 
+	/**
+	 * Returns the array of supported SecurityCredential classes
+	 */
 	public Class[] getSupportedSecurityCredentialClasses() {
 
 		return new Class[] { OurGridSecurityCredencial.class };
 	}
 
+	/**
+	 * Set the security credential used for the security context
+	 * @param credential the security credential
+	 */
 	public void setSecurityCredential(SecurityCredential credential) {
 
 		setM_account(((OurGridSecurityCredencial) credential).getUserID());

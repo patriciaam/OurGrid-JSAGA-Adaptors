@@ -47,6 +47,11 @@ import fr.in2p3.jsaga.adaptor.job.monitor.JobMonitorAdaptor;
  * Date:   August 2012
  * ***************************************************/
 
+/**
+ * This class handles the submission, cancel and clean of a job 
+ * @author patriciaam
+ *
+ */
 public class OurGridJobControlAdaptor extends OurGridAbstract implements
 JobControlAdaptor, CleanableJobAdaptor, StagingJobAdaptorOnePhase {
 
@@ -197,8 +202,7 @@ JobControlAdaptor, CleanableJobAdaptor, StagingJobAdaptorOnePhase {
 	/**
 	 * Cleans an ended job filtered by job id
 	 * 
-	 * @param nativeJobId
-	 *            Identifier of the job
+	 * @param nativeJobId Identifier of the job
 	 */
 	public void clean(String nativeJobId) throws PermissionDeniedException,TimeoutException, NoSuccessException {
 
@@ -210,8 +214,7 @@ JobControlAdaptor, CleanableJobAdaptor, StagingJobAdaptorOnePhase {
 	}
 
 	/**
-	 * Cancels a job filtered by job id
-	 * 
+	 * Cancels a job filtered by job id 
 	 * @param nativeJobId Identifier of the job
 	 */
 	public void cancel(String nativeJobId) throws PermissionDeniedException, TimeoutException, NoSuccessException {
